@@ -16,16 +16,16 @@ const footerLinks = {
         { href: "/programs#ai", label: "AI-IoT Systems" },
     ],
     contact: [
-        { icon: Mail, text: "hello@genbots.edu", href: "mailto:hello@genbots.edu" },
-        { icon: Phone, text: "+91 98765 43210", href: "tel:+919876543210" },
-        { icon: MapPin, text: "Bangalore, India", href: "#" },
+        { icon: Mail, text: "khannayash394@gmail.com", href: "mailto:khannayash394@gmail.com" },
+        { icon: Phone, text: "+91 92110 67540", href: "tel:+919211067540" },
+        { icon: MapPin, text: "Sonipat, Haryana, India", href: "#" },
     ],
 };
 
 const socialLinks = [
-    { icon: Twitter, href: "https://twitter.com/genbots", label: "Twitter" },
-    { icon: Linkedin, href: "https://linkedin.com/company/genbots", label: "LinkedIn" },
-    { icon: Github, href: "https://github.com/genbots", label: "GitHub" },
+    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+    { icon: Github, href: "https://github.com", label: "GitHub" },
 ];
 
 export function Footer() {
