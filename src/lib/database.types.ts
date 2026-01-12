@@ -40,36 +40,106 @@ export type TeamMemberInput = Omit<TeamMember, 'id' | 'created_at'>;
 export type ContactQueryInput = Omit<ContactQuery, 'id' | 'created_at' | 'status'>;
 
 // Database schema type for Supabase client
-export interface Database {
+export type Database = {
     public: {
         Tables: {
+            contact_queries: {
+                Row: {
+                    id: string;
+                    name: string;
+                    email: string;
+                    phone: string | null;
+                    organization: string | null;
+                    message: string;
+                    status: 'new' | 'read' | 'responded';
+                    created_at: string;
+                };
+                Insert: {
+                    id?: string;
+                    name: string;
+                    email: string;
+                    phone?: string | null;
+                    organization?: string | null;
+                    message: string;
+                    status?: 'new' | 'read' | 'responded';
+                    created_at?: string;
+                };
+                Update: {
+                    id?: string;
+                    name?: string;
+                    email?: string;
+                    phone?: string | null;
+                    organization?: string | null;
+                    message?: string;
+                    status?: 'new' | 'read' | 'responded';
+                    created_at?: string;
+                };
+                Relationships: [];
+            };
             projects: {
-                Row: Project;
-                Insert: ProjectInput & { id?: string };
-                Update: Partial<ProjectInput>;
+                Row: {
+                    id: string;
+                    title: string;
+                    description: string;
+                    image_url: string | null;
+                    category: 'smart-home' | 'robotics' | 'drones' | 'iot' | 'ai';
+                    created_at: string;
+                    updated_at: string;
+                };
+                Insert: {
+                    id?: string;
+                    title: string;
+                    description: string;
+                    image_url?: string | null;
+                    category: 'smart-home' | 'robotics' | 'drones' | 'iot' | 'ai';
+                    created_at?: string;
+                    updated_at?: string;
+                };
+                Update: {
+                    id?: string;
+                    title?: string;
+                    description?: string;
+                    image_url?: string | null;
+                    category?: 'smart-home' | 'robotics' | 'drones' | 'iot' | 'ai';
+                    created_at?: string;
+                    updated_at?: string;
+                };
+                Relationships: [];
             };
             team_members: {
-                Row: TeamMember;
-                Insert: TeamMemberInput & { id?: string };
-                Update: Partial<TeamMemberInput>;
+                Row: {
+                    id: string;
+                    name: string;
+                    role: string;
+                    image_url: string | null;
+                    bio: string | null;
+                    order_index: number;
+                    created_at: string;
+                };
+                Insert: {
+                    id?: string;
+                    name: string;
+                    role: string;
+                    image_url?: string | null;
+                    bio?: string | null;
+                    order_index?: number;
+                    created_at?: string;
+                };
+                Update: {
+                    id?: string;
+                    name?: string;
+                    role?: string;
+                    image_url?: string | null;
+                    bio?: string | null;
+                    order_index?: number;
+                    created_at?: string;
+                };
+                Relationships: [];
             };
-            contact_queries: {
-                Row: ContactQuery;
-                Insert: ContactQueryInput & { id?: string; status?: ContactQuery['status'] };
-                Update: Partial<ContactQuery>;
-            };
         };
-        Views: {
-            [_ in never]: never;
-        };
-        Functions: {
-            [_ in never]: never;
-        };
-        Enums: {
-            [_ in never]: never;
-        };
-        CompositeTypes: {
-            [_ in never]: never;
-        };
+        Views: {};
+        Functions: {};
+        Enums: {};
+        CompositeTypes: {};
     };
-}
+};

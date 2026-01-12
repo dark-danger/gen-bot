@@ -1,6 +1,8 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
     Target,
     Eye,
@@ -10,9 +12,12 @@ import {
     Users,
     Trophy,
     Rocket,
+    User,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui";
 import { PageWrapper, Section, SectionHeader } from "@/components/layout";
+import { getTeamMembers } from "@/actions";
+import type { TeamMember } from "@/lib/database.types";
 
 const values = [
     {
@@ -47,6 +52,15 @@ const milestones = [
 ];
 
 export default function AboutPage() {
+    const [members, setMembers] = useState<TeamMember[]>([]);
+
+    useEffect(() => {
+        const loadTeamMembers = async () => {
+            const { data } = await getTeamMembers();
+            if (data) setMembers(data);
+        };
+        loadTeamMembers();
+    }, []);
     return (
         <PageWrapper>
             {/* Hero Section */}
@@ -194,6 +208,61 @@ export default function AboutPage() {
                     </div>
                 </div>
             </Section>
+
+            {/* Team Section */}
+            {members.length > 0 && (
+                <Section>
+                    <SectionHeader
+                        title="Meet Our Team"
+                        subtitle="The passionate individuals driving innovation in STEM education"
+                    />
+
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                        {members.map((member, index) => (
+                            <motion.div
+                                key={member.id}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                            >
+                                <Card className="h-full text-center group">
+                                    <CardContent className="p-6">
+                                        <div className="relative w-32 h-32 mx-auto mb-4">
+                                            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-neon-cyan to-neon-blue opacity-20 blur-xl group-hover:opacity-40 transition-opacity" />
+                                            <div className="relative w-full h-full rounded-full overflow-hidden bg-dark-800 border-2 border-dark-700 group-hover:border-neon-cyan/50 transition-colors">
+                                                {member.image_url ? (
+                                                    <Image
+                                                        src={member.image_url}
+                                                        alt={member.name}
+                                                        fill
+                                                        className="object-cover"
+                                                    />
+                                                ) : (
+                                                    <div className="w-full h-full flex items-center justify-center">
+                                                        <User className="w-16 h-16 text-dark-600" />
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
+                                        <h3 className="text-xl font-semibold text-white mb-1">
+                                            {member.name}
+                                        </h3>
+                                        <p className="text-neon-cyan text-sm font-medium mb-3">
+                                            {member.role}
+                                        </p>
+                                        {member.bio && (
+                                            <p className="text-dark-400 text-sm leading-relaxed">
+                                                {member.bio}
+                                            </p>
+                                        )}
+                                    </CardContent>
+                                </Card>
+                            </motion.div>
+                        ))}
+                    </div>
+                </Section>
+            )}
 
             {/* School Partnerships */}
             <Section className="bg-dark-900/50">

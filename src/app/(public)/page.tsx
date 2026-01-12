@@ -96,18 +96,6 @@ export default function HomePage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        {/* Badge */}
-                        <motion.div
-                            initial={{ scale: 0.9, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            transition={{ delay: 0.2 }}
-                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark-800/50 border border-dark-700/50 backdrop-blur-sm mb-8"
-                        >
-                            <Sparkles className="w-4 h-4 text-neon-cyan" />
-                            <span className="text-sm text-dark-300">
-                                Empowering Future Innovators
-                            </span>
-                        </motion.div>
 
                         {/* Main heading */}
                         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
@@ -137,22 +125,6 @@ export default function HomePage() {
                                 </Button>
                             </Link>
                         </div>
-                    </motion.div>
-
-                    {/* Scroll indicator */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 1.5 }}
-                        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-                    >
-                        <motion.div
-                            animate={{ y: [0, 8, 0] }}
-                            transition={{ duration: 1.5, repeat: Infinity }}
-                            className="w-6 h-10 rounded-full border-2 border-dark-600 flex items-start justify-center p-2"
-                        >
-                            <div className="w-1 h-2 rounded-full bg-neon-cyan" />
-                        </motion.div>
                     </motion.div>
                 </div>
             </section>
