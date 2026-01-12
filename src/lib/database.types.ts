@@ -55,7 +55,7 @@ export interface Database {
             };
             contact_queries: {
                 Row: ContactQuery;
-                Insert: ContactQueryInput & { id?: string };
+                Insert: ContactQueryInput & { id?: string; status?: ContactQuery['status'] };
                 Update: Partial<ContactQuery>;
             };
         };
