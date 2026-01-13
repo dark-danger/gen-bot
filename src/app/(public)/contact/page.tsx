@@ -8,9 +8,9 @@ import { Button, Input, Textarea, Card, CardContent } from "@/components/ui";
 import { PageWrapper, Section } from "@/components/layout";
 
 const contactInfo = [
-    { icon: Mail, label: "Email", value: "hello@genbots.edu", href: "mailto:hello@genbots.edu" },
-    { icon: Phone, label: "Phone", value: "+91 98765 43210", href: "tel:+919876543210" },
-    { icon: MapPin, label: "Location", value: "Bangalore, India", href: "#" },
+    { icon: Mail, label: "Email", value: "khannayash394@gmail.com", href: "mailto:khannayash394@gmail.com" },
+    { icon: Phone, label: "Phone", value: "+91 92110 67540", href: "tel:+919211067540" },
+    { icon: MapPin, label: "Location", value: "Sonipat, Haryana, India", href: "#" },
 ];
 
 export default function ContactPage() {
