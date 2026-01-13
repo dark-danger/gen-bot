@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react";
-import { submitContactForm } from "@/actions";
+import { createClient } from "@/lib/supabase/client";
 import { Button, Input, Textarea, Card, CardContent } from "@/components/ui";
 import { PageWrapper, Section } from "@/components/layout";
 
@@ -23,14 +23,49 @@ export default function ContactPage() {
         setStatus("loading");
         setErrorMessage("");
 
-        const result = await submitContactForm(formData);
-
-        if (result.error) {
+        // Validate input
+        if (!formData.name || !formData.email || !formData.message) {
             setStatus("error");
-            setErrorMessage(result.error);
-        } else {
-            setStatus("success");
-            setFormData({ name: "", email: "", phone: "", organization: "", message: "" });
+            setErrorMessage("Please fill in all required fields");
+            return;
+        }
+
+        // Basic email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(formData.email)) {
+            setStatus("error");
+            setErrorMessage("Please enter a valid email address");
+            return;
+        }
+
+        try {
+            const supabase = createClient();
+
+            const { data, error } = await supabase
+                .from("contact_queries")
+                .insert({
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone || null,
+                    organization: formData.organization || null,
+                    message: formData.message,
+                    status: "new",
+                })
+                .select()
+                .single();
+
+            if (error) {
+                console.error("Error submitting contact form:", error);
+                setStatus("error");
+                setErrorMessage("Failed to submit form. Please try again.");
+            } else {
+                setStatus("success");
+                setFormData({ name: "", email: "", phone: "", organization: "", message: "" });
+            }
+        } catch (error) {
+            console.error("Unexpected error:", error);
+            setStatus("error");
+            setErrorMessage("An unexpected error occurred. Please try again.");
         }
     };
 
