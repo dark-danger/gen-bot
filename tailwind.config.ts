@@ -26,7 +26,7 @@ const config: Config = {
                 // Neon cyan/blue accents
                 neon: {
                     cyan: "#00f5ff",
-                    blue: "#0080ff",
+                    blue: "#00d9a3", // Changed to green sea color
                     purple: "#8b5cf6",
                     pink: "#ec4899",
                 },
@@ -51,12 +51,12 @@ const config: Config = {
             backgroundImage: {
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
                 "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-                "glow-conic": "conic-gradient(from 180deg at 50% 50%, #00f5ff 0deg, #0080ff 90deg, #8b5cf6 180deg, #ec4899 270deg, #00f5ff 360deg)",
+                "glow-conic": "conic-gradient(from 180deg at 50% 50%, #00f5ff 0deg, #00d9a3 90deg, #8b5cf6 180deg, #ec4899 270deg, #00f5ff 360deg)",
             },
             boxShadow: {
                 glow: "0 0 20px rgba(0, 245, 255, 0.3)",
                 "glow-lg": "0 0 40px rgba(0, 245, 255, 0.4)",
-                "glow-blue": "0 0 30px rgba(0, 128, 255, 0.4)",
+                "glow-blue": "0 0 30px rgba(0, 217, 163, 0.4)",
                 "inner-glow": "inset 0 0 20px rgba(0, 245, 255, 0.1)",
             },
             animation: {
