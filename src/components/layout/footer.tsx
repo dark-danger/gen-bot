@@ -45,7 +45,7 @@ export function Footer() {
                             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-neon-cyan to-neon-blue flex items-center justify-center shadow-glow">
                                 <Cpu className="w-6 h-6 text-dark-900" />
                             </div>
-                            <span className="text-xl font-bold text-white">GenBots</span>
+                            <span className="text-xl font-bold text-white font-tech italic">GenBots</span>
                         </Link>
                         <p className="text-dark-400 text-sm leading-relaxed mb-6">
                             Empowering the next generation with hands-on STEM education through

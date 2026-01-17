@@ -96,32 +96,45 @@ export default function HomePage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
+                        {/* Badge */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.2, duration: 0.5 }}
+                            className="inline-flex items-center px-4 py-2 mb-8 rounded-full bg-neon-cyan/10 border border-neon-cyan/30"
+                        >
+                            <span className="text-neon-cyan text-sm font-medium tracking-wider">
+                                INNOVATE · LEARN · CREATE
+                            </span>
+                        </motion.div>
 
                         {/* Main heading */}
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
-                            <span className="text-white">Building Tomorrow&apos;s</span>
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8 font-tech">
+                            <span className="text-white italic">Building Future</span>
                             <br />
-                            <span className="gradient-text">Tech Leaders Today</span>
+                            <span className="text-neon-cyan italic">Innovators</span>
+                            <span className="text-white italic"> with</span>
+                            <br />
+                            <span className="text-white italic">IoT, Robotics &amp; AI</span>
                         </h1>
 
                         {/* Subtitle */}
                         <p className="text-lg sm:text-xl text-dark-400 max-w-3xl mx-auto mb-12 text-balance">
-                            GenBots delivers hands-on STEM education through IoT, robotics,
-                            drones, and AI-integrated learning experiences. Partner with us to
-                            transform your school into an innovation hub.
+                            Empowering students with hands-on education in cutting-edge technology.
+                            From smart homes to autonomous drones, we make innovation accessible.
                         </p>
 
                         {/* CTAs */}
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <Link href="/contact">
+                            <Link href="/programs">
                                 <Button size="lg" className="group">
-                                    Partner With Us
+                                    Explore Programs
                                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                 </Button>
                             </Link>
-                            <Link href="/programs">
+                            <Link href="/contact">
                                 <Button variant="secondary" size="lg">
-                                    Explore Programs
+                                    Partner With Us
                                 </Button>
                             </Link>
                         </div>
@@ -150,10 +163,10 @@ export default function HomePage() {
                                 <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-neon-cyan/20 to-neon-blue/20 flex items-center justify-center group-hover:scale-110 transition-transform">
                                     <stat.icon className="w-6 h-6 text-neon-cyan" />
                                 </div>
-                                <div className="text-3xl font-bold text-white mb-1">
+                                <div className="text-3xl font-bold text-neon-cyan mb-1 font-tech italic">
                                     {stat.value}
                                 </div>
-                                <div className="text-dark-400 text-sm">{stat.label}</div>
+                                <div className="text-dark-400 text-sm font-tech italic">{stat.label}</div>
                             </div>
                         </motion.div>
                     ))}
@@ -220,9 +233,9 @@ export default function HomePage() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-tech italic">
                             Why Schools Choose{" "}
-                            <span className="gradient-text">GenBots</span>
+                            <span className="text-neon-cyan">GenBots</span>
                         </h2>
                         <p className="text-dark-400 text-lg mb-8 leading-relaxed">
                             We don&apos;t just teach technology — we inspire innovation. Our
@@ -339,7 +352,7 @@ export default function HomePage() {
                     <div className="absolute inset-0 backdrop-blur-3xl" />
 
                     <div className="relative px-8 py-16 sm:px-16 sm:py-20 text-center">
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-tech italic">
                             Ready to Transform Your School?
                         </h2>
                         <p className="text-dark-300 text-lg max-w-2xl mx-auto mb-10">

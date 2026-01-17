@@ -60,7 +60,7 @@ export function SectionHeader({
             transition={{ duration: 0.5 }}
             className={`mb-12 lg:mb-16 ${centered ? "text-center" : ""} ${className}`}
         >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 font-tech italic">
                 <span className="bg-gradient-to-r from-white via-dark-200 to-dark-400 bg-clip-text text-transparent">
                     {title}
                 </span>

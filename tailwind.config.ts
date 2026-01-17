@@ -23,10 +23,10 @@ const config: Config = {
                     900: "#202123",
                     950: "#0d0d0f",
                 },
-                // Neon cyan/blue accents
+                // Turquoise accent colors
                 neon: {
-                    cyan: "#00f5ff",
-                    blue: "#00d9a3", // Changed to green sea color
+                    cyan: "#00F0D4",
+                    blue: "#00F0D4",
                     purple: "#8b5cf6",
                     pink: "#ec4899",
                 },
@@ -36,28 +36,29 @@ const config: Config = {
                     200: "#a5f3fc",
                     300: "#67e8f9",
                     400: "#22d3ee",
-                    500: "#06b6d4",
-                    600: "#0891b2",
-                    700: "#0e7490",
-                    800: "#155e75",
-                    900: "#164e63",
-                    950: "#083344",
+                    500: "#00F0D4",
+                    600: "#00d4ba",
+                    700: "#00b89f",
+                    800: "#009d87",
+                    900: "#00826f",
+                    950: "#005a4d",
                 },
             },
             fontFamily: {
                 sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-                display: ["var(--font-outfit)", "system-ui", "sans-serif"],
+                display: ["var(--font-chakra)", "var(--font-outfit)", "system-ui", "sans-serif"],
+                tech: ["var(--font-chakra)", "system-ui", "sans-serif"],
             },
             backgroundImage: {
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
                 "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-                "glow-conic": "conic-gradient(from 180deg at 50% 50%, #00f5ff 0deg, #00d9a3 90deg, #8b5cf6 180deg, #ec4899 270deg, #00f5ff 360deg)",
+                "glow-conic": "conic-gradient(from 180deg at 50% 50%, #00F0D4 0deg, #00F0D4 90deg, #8b5cf6 180deg, #ec4899 270deg, #00F0D4 360deg)",
             },
             boxShadow: {
-                glow: "0 0 20px rgba(0, 245, 255, 0.3)",
-                "glow-lg": "0 0 40px rgba(0, 245, 255, 0.4)",
-                "glow-blue": "0 0 30px rgba(0, 217, 163, 0.4)",
-                "inner-glow": "inset 0 0 20px rgba(0, 245, 255, 0.1)",
+                glow: "0 0 20px rgba(0, 240, 212, 0.3)",
+                "glow-lg": "0 0 40px rgba(0, 240, 212, 0.4)",
+                "glow-blue": "0 0 30px rgba(0, 240, 212, 0.4)",
+                "inner-glow": "inset 0 0 20px rgba(0, 240, 212, 0.1)",
             },
             animation: {
                 "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
@@ -73,8 +74,8 @@ const config: Config = {
                     "50%": { transform: "translateY(-20px)" },
                 },
                 glow: {
-                    "0%": { boxShadow: "0 0 20px rgba(0, 245, 255, 0.3)" },
-                    "100%": { boxShadow: "0 0 40px rgba(0, 245, 255, 0.6)" },
+                    "0%": { boxShadow: "0 0 20px rgba(0, 240, 212, 0.3)" },
+                    "100%": { boxShadow: "0 0 40px rgba(0, 240, 212, 0.6)" },
                 },
                 slideUp: {
                     "0%": { transform: "translateY(20px)", opacity: "0" },

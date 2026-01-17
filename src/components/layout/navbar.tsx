@@ -55,7 +55,7 @@ export function Navbar() {
                                 <Cpu className="w-6 h-6 text-dark-900" />
                             </div>
                         </motion.div>
-                        <span className="text-xl font-bold bg-gradient-to-r from-white to-dark-300 bg-clip-text text-transparent group-hover:from-neon-cyan group-hover:to-neon-blue transition-all duration-300">
+                        <span className="text-xl font-bold font-tech italic bg-gradient-to-r from-white to-dark-300 bg-clip-text text-transparent group-hover:from-neon-cyan group-hover:to-neon-blue transition-all duration-300">
                             GenBots
                         </span>
                     </Link>
