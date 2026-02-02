@@ -60,7 +60,7 @@ const programs = [
 const stats = [
     { icon: GraduationCap, value: "3+", label: "Partner Schools" },
     { icon: Users, value: "1,000+", label: "Students Trained" },
-    { icon: Building2, value: "10+", label: "Labs Installed" },
+    { icon: Building2, value: "3+", label: "Labs Installed" },
     { icon: Sparkles, value: "50+", label: "Projects Built" },
 ];
 
@@ -363,7 +363,7 @@ export default function HomePage() {
                             Ready to Transform Your School?
                         </h2>
                         <p className="text-dark-300 text-lg max-w-2xl mx-auto mb-10">
-                            Join 50+ schools already building the future with GenBots. Schedule
+                            Join our partner schools already building the future with GenBots. Schedule
                             a consultation to learn how we can bring world-class STEM education
                             to your institution.
                         </p>

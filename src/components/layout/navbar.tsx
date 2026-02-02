@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Cpu } from "lucide-react";
+import { Menu, X, Cpu, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui";
 
 const navLinks = [
@@ -87,8 +87,18 @@ export function Navbar() {
                         })}
                     </div>
 
-                    {/* CTA Button */}
-                    <div className="hidden md:block">
+                    {/* CTA Buttons */}
+                    <div className="hidden md:flex items-center gap-3">
+                        <a
+                            href="https://chat.whatsapp.com/H3z2o0EJKUoCrvBLs8skKT?mode=gi_t"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Button variant="secondary" size="sm" className="bg-[#25D366] hover:bg-[#128C7E] border-none text-white gap-2">
+                                <MessageCircle className="w-4 h-4 fill-current" />
+                                Join Group
+                            </Button>
+                        </a>
                         <Link href="/contact">
                             <Button variant="primary" size="sm">
                                 Partner With Us
@@ -138,18 +148,24 @@ export function Navbar() {
                                     </motion.div>
                                 );
                             })}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ delay: 0.3 }}
-                                className="pt-4"
-                            >
+                            <div className="space-y-3 pt-4">
+                                <a
+                                    href="https://chat.whatsapp.com/H3z2o0EJKUoCrvBLs8skKT?mode=gi_t"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block"
+                                >
+                                    <Button className="w-full bg-[#25D366] hover:bg-[#128C7E] border-none text-white gap-2">
+                                        <MessageCircle className="w-5 h-5 fill-current" />
+                                        Join WhatsApp Group
+                                    </Button>
+                                </a>
                                 <Link href="/contact" className="block">
                                     <Button variant="primary" className="w-full">
                                         Partner With Us
                                     </Button>
                                 </Link>
-                            </motion.div>
+                            </div>
                         </div>
                     </motion.div>
                 )}
