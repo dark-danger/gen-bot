@@ -58,10 +58,10 @@ const programs = [
 ];
 
 const stats = [
-    { icon: GraduationCap, value: "50+", label: "Partner Schools" },
-    { icon: Users, value: "10,000+", label: "Students Trained" },
-    { icon: Building2, value: "100+", label: "Labs Installed" },
-    { icon: Sparkles, value: "500+", label: "Projects Built" },
+    { icon: GraduationCap, value: "3+", label: "Partner Schools" },
+    { icon: Users, value: "1,000+", label: "Students Trained" },
+    { icon: Building2, value: "10+", label: "Labs Installed" },
+    { icon: Sparkles, value: "50+", label: "Projects Built" },
 ];
 
 export default function HomePage() {

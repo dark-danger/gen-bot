@@ -115,7 +115,7 @@ export default function WhyGenBotsPage() {
                     <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
                         <Card glow><CardContent className="p-8">
                             <div className="grid grid-cols-2 gap-6">
-                                {[{ v: "98%", l: "Satisfaction" }, { v: "85%", l: "Completion" }, { v: "50+", l: "Schools" }, { v: "4.9", l: "Rating" }].map((s, i) => (
+                                {[{ v: "98%", l: "Satisfaction" }, { v: "85%", l: "Completion" }, { v: "3+", l: "Schools" }, { v: "4.9", l: "Rating" }].map((s, i) => (
                                     <div key={i} className="text-center p-4 rounded-xl bg-dark-800/50">
                                         <div className="text-3xl font-bold text-neon-cyan mb-1">{s.v}</div>
                                         <div className="text-dark-400 text-sm">{s.l}</div>
