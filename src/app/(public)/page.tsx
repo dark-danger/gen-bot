@@ -14,6 +14,7 @@ import {
     Building2,
     Users,
     ChevronRight,
+    Download,
 } from "lucide-react";
 import { Button, Card, CardContent } from "@/components/ui";
 import { PageWrapper, Section, SectionHeader } from "@/components/layout";
@@ -130,6 +131,12 @@ export default function HomePage() {
                                 <Button size="lg" className="group">
                                     Explore Programs
                                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                </Button>
+                            </Link>
+                            <Link href="/software">
+                                <Button variant="secondary" size="lg" className="border-neon-cyan/50 text-neon-cyan hover:bg-neon-cyan/10">
+                                    <Download className="mr-2 w-4 h-4" />
+                                    Download Software
                                 </Button>
                             </Link>
                             <Link href="/contact">

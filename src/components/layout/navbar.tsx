@@ -12,6 +12,7 @@ const navLinks = [
     { href: "/about", label: "About" },
     { href: "/programs", label: "Programs" },
     { href: "/projects", label: "Projects" },
+    { href: "/software", label: "Software" },
     { href: "/why-genbots", label: "Why GenBots" },
     { href: "/contact", label: "Contact" },
 ];
