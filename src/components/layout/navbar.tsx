@@ -15,6 +15,7 @@ const navLinks = [
     { href: "/software", label: "Software" },
     { href: "/why-genbots", label: "Why GenBots" },
     { href: "/contact", label: "Contact" },
+    { href: "/store", label: "Store", highlight: true },
 ];
 
 export function Navbar() {
@@ -82,6 +83,21 @@ export function Navbar() {
                                             transition={{ type: "spring", duration: 0.5 }}
                                         />
                                     )}
+                                    {link.highlight && !isActive && (
+                                        <motion.div
+                                            className="absolute inset-0 bg-gradient-to-r from-neon-purple/20 to-neon-pink/20 rounded-lg border border-neon-purple/30 -z-10"
+                                            animate={{ 
+                                                boxShadow: ["0 0 0px rgba(168,85,247,0)", "0 0 15px rgba(168,85,247,0.5)", "0 0 0px rgba(168,85,247,0)"] 
+                                            }}
+                                            transition={{ duration: 2, repeat: Infinity }}
+                                        />
+                                    )}
+                                    {link.highlight && (
+                                        <span className="absolute -top-1 -right-1 flex h-3 w-3">
+                                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-pink opacity-75"></span>
+                                            <span className="relative inline-flex rounded-full h-3 w-3 bg-neon-pink"></span>
+                                        </span>
+                                    )}
                                 </Link>
                             );
                         })}
@@ -138,12 +154,22 @@ export function Navbar() {
                                     >
                                         <Link
                                             href={link.href}
-                                            className={`block px-4 py-3 rounded-xl text-sm font-medium transition-all ${isActive
+                                            className={`block px-4 py-3 rounded-xl text-sm font-medium transition-all relative ${isActive
                                                 ? "bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/20"
-                                                : "text-dark-300 hover:text-white hover:bg-dark-800"
+                                                : link.highlight 
+                                                    ? "text-white bg-gradient-to-r from-neon-purple/20 to-neon-pink/20 border border-neon-purple/30" 
+                                                    : "text-dark-300 hover:text-white hover:bg-dark-800"
                                                 }`}
                                         >
-                                            {link.label}
+                                            <div className="flex items-center justify-between">
+                                                <span>{link.label}</span>
+                                                {link.highlight && (
+                                                    <span className="flex h-3 w-3 relative">
+                                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-pink opacity-75"></span>
+                                                        <span className="relative inline-flex rounded-full h-3 w-3 bg-neon-pink"></span>
+                                                    </span>
+                                                )}
+                                            </div>
                                         </Link>
                                     </motion.div>
                                 );
