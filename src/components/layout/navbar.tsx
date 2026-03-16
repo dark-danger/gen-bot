@@ -70,33 +70,21 @@ export function Navbar() {
                                 <Link
                                     key={link.href}
                                     href={link.href}
-                                    className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${isActive
-                                        ? "text-neon-cyan"
-                                        : "text-dark-300 hover:text-white"
+                                    className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
+                                        link.highlight 
+                                            ? "bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/30 hover:shadow-glow hover:bg-neon-cyan/20 transform hover:-translate-y-0.5" 
+                                            : isActive
+                                                ? "text-neon-cyan"
+                                                : "text-dark-300 hover:text-white"
                                         }`}
                                 >
                                     {link.label}
-                                    {isActive && (
+                                    {isActive && !link.highlight && (
                                         <motion.div
                                             layoutId="navbar-indicator"
                                             className="absolute inset-0 bg-neon-cyan/10 rounded-lg border border-neon-cyan/20"
                                             transition={{ type: "spring", duration: 0.5 }}
                                         />
-                                    )}
-                                    {link.highlight && !isActive && (
-                                        <motion.div
-                                            className="absolute inset-0 bg-gradient-to-r from-neon-purple/20 to-neon-pink/20 rounded-lg border border-neon-purple/30 -z-10"
-                                            animate={{ 
-                                                boxShadow: ["0 0 0px rgba(168,85,247,0)", "0 0 15px rgba(168,85,247,0.5)", "0 0 0px rgba(168,85,247,0)"] 
-                                            }}
-                                            transition={{ duration: 2, repeat: Infinity }}
-                                        />
-                                    )}
-                                    {link.highlight && (
-                                        <span className="absolute -top-1 -right-1 flex h-3 w-3">
-                                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-pink opacity-75"></span>
-                                            <span className="relative inline-flex rounded-full h-3 w-3 bg-neon-pink"></span>
-                                        </span>
                                     )}
                                 </Link>
                             );
@@ -154,19 +142,20 @@ export function Navbar() {
                                     >
                                         <Link
                                             href={link.href}
-                                            className={`block px-4 py-3 rounded-xl text-sm font-medium transition-all relative ${isActive
-                                                ? "bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/20"
-                                                : link.highlight 
-                                                    ? "text-white bg-gradient-to-r from-neon-purple/20 to-neon-pink/20 border border-neon-purple/30" 
-                                                    : "text-dark-300 hover:text-white hover:bg-dark-800"
+                                            className={`block px-4 py-3 rounded-xl text-sm font-medium transition-all relative ${
+                                                link.highlight 
+                                                    ? "text-neon-cyan bg-neon-cyan/10 border border-neon-cyan/30 shadow-[0_0_15px_rgba(0,240,212,0.15)]" 
+                                                    : isActive
+                                                        ? "bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/20"
+                                                        : "text-dark-300 hover:text-white hover:bg-dark-800"
                                                 }`}
                                         >
                                             <div className="flex items-center justify-between">
                                                 <span>{link.label}</span>
                                                 {link.highlight && (
-                                                    <span className="flex h-3 w-3 relative">
-                                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-pink opacity-75"></span>
-                                                        <span className="relative inline-flex rounded-full h-3 w-3 bg-neon-pink"></span>
+                                                    <span className="flex h-2.5 w-2.5 relative">
+                                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-cyan opacity-75"></span>
+                                                        <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-neon-cyan"></span>
                                                     </span>
                                                 )}
                                             </div>
