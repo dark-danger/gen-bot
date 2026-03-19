@@ -7,7 +7,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Cpu, MessageCircle, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui";
 
-const navLinks = [
+type NavLink = {
+    href: string;
+    label: string;
+    highlight?: boolean;
+};
+
+const navLinks: NavLink[] = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/programs", label: "Programs" },
