@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Cpu, MessageCircle } from "lucide-react";
+import { Menu, X, Cpu, MessageCircle, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui";
 
 const navLinks = [
@@ -15,7 +15,6 @@ const navLinks = [
     { href: "/software", label: "Software" },
     { href: "/why-genbots", label: "Why GenBots" },
     { href: "/contact", label: "Contact" },
-    { href: "/store", label: "Store", highlight: true },
 ];
 
 export function Navbar() {
@@ -93,6 +92,12 @@ export function Navbar() {
 
                     {/* CTA Buttons */}
                     <div className="hidden md:flex items-center gap-3">
+                        <Link href="/store">
+                            <Button variant="secondary" size="sm" className="gap-2 text-neon-cyan border-neon-cyan/20 hover:bg-neon-cyan/10">
+                                <ShoppingCart className="w-4 h-4" />
+                                Store
+                            </Button>
+                        </Link>
                         <a
                             href="https://chat.whatsapp.com/H3z2o0EJKUoCrvBLs8skKT?mode=gi_t"
                             target="_blank"
@@ -164,6 +169,12 @@ export function Navbar() {
                                 );
                             })}
                             <div className="space-y-3 pt-4">
+                                <Link href="/store" className="block">
+                                    <Button variant="secondary" className="w-full gap-2 text-neon-cyan border-neon-cyan/20 hover:bg-neon-cyan/10">
+                                        <ShoppingCart className="w-5 h-5" />
+                                        Store
+                                    </Button>
+                                </Link>
                                 <a
                                     href="https://chat.whatsapp.com/H3z2o0EJKUoCrvBLs8skKT?mode=gi_t"
                                     target="_blank"
