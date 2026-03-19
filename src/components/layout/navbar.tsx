@@ -98,12 +98,12 @@ export function Navbar() {
 
                     {/* CTA Buttons */}
                     <div className="hidden md:flex items-center gap-3">
-                        <Link href="/store">
+                        <a href="https://genapp.in" target="_blank" rel="noopener noreferrer">
                             <Button variant="secondary" size="sm" className="gap-2 text-neon-cyan border-neon-cyan/20 hover:bg-neon-cyan/10">
                                 <ShoppingCart className="w-4 h-4" />
                                 Store
                             </Button>
-                        </Link>
+                        </a>
                         <a
                             href="https://chat.whatsapp.com/H3z2o0EJKUoCrvBLs8skKT?mode=gi_t"
                             target="_blank"
@@ -175,12 +175,12 @@ export function Navbar() {
                                 );
                             })}
                             <div className="space-y-3 pt-4">
-                                <Link href="/store" className="block">
+                                <a href="https://genapp.in" target="_blank" rel="noopener noreferrer" className="block">
                                     <Button variant="secondary" className="w-full gap-2 text-neon-cyan border-neon-cyan/20 hover:bg-neon-cyan/10">
                                         <ShoppingCart className="w-5 h-5" />
                                         Store
                                     </Button>
-                                </Link>
+                                </a>
                                 <a
                                     href="https://chat.whatsapp.com/H3z2o0EJKUoCrvBLs8skKT?mode=gi_t"
                                     target="_blank"
